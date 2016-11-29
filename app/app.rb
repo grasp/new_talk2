@@ -2,7 +2,17 @@ module NewTalk
   class App < Padrino::Application
     register Padrino::Mailer
     register Padrino::Helpers
-    enable :sessions
+
+
+   # enable :sessions  #comments as apps has enable
+
+    register Padrino::Admin::Helpers
+    register Padrino::Admin::AccessControl
+    register WillPaginate::Sinatra
+    register Sinatra::MultiRoute
+
+    set :admin_model, 'Account'
+    set :login_page,  '/sessions/new'
 
     ##
     # Caching support.

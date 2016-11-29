@@ -14,4 +14,4 @@ ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
 require "rubygems"
 require "bundler/setup"
 
-load Gem.bin_path("mongo", "mongo_console")
+load Gem.bin_path("new_talk", "mongo_console")

@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "new_talk"
   gem.require_paths = ["lib", "app"]
-  gem.version       = NewTalk::VERSION
+  gem.version       = 0.0
 
   gem.add_dependency "padrino-core"
 end

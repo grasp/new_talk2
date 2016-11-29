@@ -1,0 +1,39 @@
+!!! 5
+%html{:lang => 'en'}
+  %head
+    %meta{:content => 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type'}
+    %meta{:name => :viewport, :content => 'width=device-width,initial-scale=1, shrink-to-fit=no'}
+    %title= @title.present? ? "#{@title} | #{I18n.t("brand_name")}" : I18n.t("brand_name")
+    =favicon_tag 'talk_blue2.png'
+   
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    =stylesheet_link_tag 'bootstrap.min', "tether.min","layout"
+
+  %body
+
+    =render_partial("layouts/nav_header")
+
+
+    .container-fluid
+      ={:error => 'danger', :warning => 'warning', :success => 'success', :notice => 'info'}.map { |type, class_name| flash_tag(type, :class => "alert alert-#{class_name} fade in", :bootstrap => true) }.join.html_safe
+
+      .row=yield
+  
+    %footer.footer
+      .container
+        %p.text-muted
+          Copyright &copy;
+          =Time.now.year
+          杭州网络技术有限公司
+
+
+
+
+
+    =javascript_include_tag 'jquery-3.1.1.min', "tether.min",'bootstrap.min'

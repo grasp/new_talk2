@@ -6,6 +6,10 @@ module NewTalk
       # def simple_helper_method
       # ...
       # end
+
+      def foo
+
+      end
     end
 
     helpers BaseHelper

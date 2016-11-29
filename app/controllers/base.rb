@@ -19,8 +19,14 @@ NewTalk::App.controllers :base do
   #   'Hello world!'
   # end
   
-  get :index do
+  get :index,:map=>"/" do
 
+    render "base/home"
+
+  end
+
+  get :base ,:map=>"/base" do 
+  "Hello World"
   end
 
 end

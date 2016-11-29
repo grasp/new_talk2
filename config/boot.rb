@@ -6,6 +6,9 @@ PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
 require 'bundler/setup'
 Bundler.require(:default, RACK_ENV)
 
+require "sinatra"
+require "sinatra/multi_route"  #only several http action into one controller action, not used at first,copy from last project
+
 ##
 # ## Enable devel logging
 #
@@ -45,6 +48,10 @@ Padrino.dependency_paths.unshift Padrino.root('config/initializers/*.rb')
 # These hooks are run before any dependencies are required.
 #
 Padrino.before_load do
+	 #I18n.locale = "zh-cn"
+
+	 I18n.config.available_locales = ["zh","en"]
+	 I18n.default_locale = "zh"
 end
 
 ##

@@ -1,0 +1,11 @@
+
+%nav.navbar.navbar-light.bg-faded
+
+  %button.navbar-toggler.hidden-lg-up{"type"=>"button","data-toggle"=>"collapse","data-target"=>"#navbarResponsive","aria-controls"=>"navbarResponsive","aria-expanded"=>"false","aria-label"=>"Toggle navigation"}
+
+  .collapse.navbar-toggleable-md#navbarResponsive
+    %a.navbar-brand{"href"=>""}=I18n.t("brand_name")
+
+    %ul.nav.navbar-nav
+      %li.active
+        %a{"href"=>"/helps"} 帮助
